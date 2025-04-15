@@ -1,33 +1,35 @@
-name: Post JSON File to Two URLs
+name: Post JSON File to Three URLs
 on:
- push:
-  branches:
-   - main # Runs only when pushing to the main branch
- workflow_dispatch: # Allows manual trigger
+  schedule:
+    - cron: '0 * * * *' # Elke uur
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   post_json:
-   runs-on: ubuntu-latest
-   steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Send JSON Data to First URL
-      run: |
-       curl -X POST "https://:Tu7MZunEQTuMYgi7mVVODQ@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAAM0E7pLLbkDVnld_08A1cJsAAAAA" \
-          -H "Content-Type: application/json" \
-          -d @stream.json
+      - name: Send JSON Data to First URL (Temperature)
+        run: |
+          curl -X POST "https://:Tu7MZunEQTuMYgi7mVVODQ@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAAM0E7pLLbkDVnld_08A1cJsAAAAA" \
+               -H "Content-Type: application/json" \
+               -d @stream.json
 
-    - name: Send JSON Data to Second URL
-      run: |
-        curl -X POST "https://:m0hcsEKxQx2_6P1b4QqBxw@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAADsun206VU4Zo7vToEhD_o4AAAAA" \
-             -H "Content-Type: application/json" \
-             -d @stream.json
+      - name: Send JSON Data to Second URL (Humidity)
+        run: |
+          curl -X POST "https://:m0hcsEKxQx2_6P1b4QqBxw@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAADsun206VU4Zo7vToEhD_o4AAAAA" \
+               -H "Content-Type: application/json" \
+               -d @stream.json
 
-    - name: Send JSON Data to Third URL (CO2)
-      run: |
-        curl -X POST "https://:jouwToken@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAAEco2StreamIdAAA" \
-             -H "Content-Type: application/json" \
-             -d @stream.json
+      - name: Send JSON Data to Third URL (CO2)
+        run: |
+          curl -X POST "https://:jouwToken@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAAEco2StreamIdAAA" \
+               -H "Content-Type: application/json" \
+               -d @stream.json
 
              
