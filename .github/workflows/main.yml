@@ -14,7 +14,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Send JSON Data to First URL (Temperature)
+      - name: Send JSON Data to First URL (Temp_1)
         run: |
           curl -X POST "https://:8FdxW7mYTHa3Sv6fusWEmg@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:CoubJeakRc28U41oqrqZHw/streams/AQAAAJbP48cLOU7UhMTN3yP3G7YAAAAA" \
                -H "Content-Type: application/json" \
@@ -26,7 +26,7 @@ jobs:
                -H "Content-Type: application/json" \
                -d @stream.json
 
-      - name: Send JSON Data to Third URL (CO2)
+      - name: Send JSON Data to Third URL (CO2_sensor)
         run: |
           curl -X POST "https://:VAuTX-tlRuGVSExwEe5c9Q@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:CoubJeakRc28U41oqrqZHw/streams/AQAAAE8L6neAPUYhm-rWCrCr3akAAAAA" \
                -H "Content-Type: application/json" \
