@@ -16,19 +16,19 @@ jobs:
 
       - name: Send JSON Data to First URL (Temperature)
         run: |
-          curl -X POST "https://:Tu7MZunEQTuMYgi7mVVODQ@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAAM0E7pLLbkDVnld_08A1cJsAAAAA" \
+          curl -X POST "https://:8FdxW7mYTHa3Sv6fusWEmg@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:CoubJeakRc28U41oqrqZHw/streams/AQAAAJbP48cLOU7UhMTN3yP3G7YAAAAA" \
                -H "Content-Type: application/json" \
                -d @stream.json
 
       - name: Send JSON Data to Second URL (Humidity)
         run: |
-          curl -X POST "https://:m0hcsEKxQx2_6P1b4QqBxw@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAADsun206VU4Zo7vToEhD_o4AAAAA" \
+          curl -X POST "https://:weV8yipxQke-Zuj3hiO9uQ@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:CoubJeakRc28U41oqrqZHw/streams/AQAAADjJHPu66kPpoxcRWnkgUn4AAAAA" \
                -H "Content-Type: application/json" \
                -d @stream.json
 
       - name: Send JSON Data to Third URL (CO2)
         run: |
-          curl -X POST "https://:jouwToken@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAAEco2StreamIdAAA" \
+          curl -X POST "https://:VAuTX-tlRuGVSExwEe5c9Q@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:CoubJeakRc28U41oqrqZHw/streams/AQAAAE8L6neAPUYhm-rWCrCr3akAAAAA" \
                -H "Content-Type: application/json" \
                -d @stream.json
 
