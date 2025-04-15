@@ -1,6 +1,5 @@
 {
-"Temperature": 22.3,
+"Temp_1": 22.3,
 "Humidity": 30,
-"timestamp": "2025-04-15T00:00:00Z",
- "value": 450
+"CO2_sensor": 450
 }
