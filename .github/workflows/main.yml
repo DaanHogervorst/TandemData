@@ -24,7 +24,7 @@ jobs:
              -H "Content-Type: application/json" \
              -d @stream.json
 
-     - name: Send JSON Data to Third URL (CO2)
+    - name: Send JSON Data to Third URL (CO2)
       run: |
         curl -X POST "https://:jouwToken@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:xvpy-pzCTMu5pKWs52GmLA/streams/AQAAAEco2StreamIdAAA" \
              -H "Content-Type: application/json" \
